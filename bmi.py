@@ -11,11 +11,11 @@ def interpret_bmi(bmi):
     Interpret BMI value according to WHO guidelines.
     """
     if bmi < 18.5:
-        return "Underweight"
+        return "Underweight", -1
     elif bmi < 25:
-        return "Normal weight"
+        return "Normal weight" , 0
     elif bmi < 30:
-        return "Overweight"
+        return "Overweight", 1
     else:
         return "Obese"
 
