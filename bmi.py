@@ -26,12 +26,12 @@ def main():
     height = float(input("Enter your height in meters: "))
 
     # Calculate BMI
-    bmi = calculate_bmi(height, weight)
+    bmi = round(calculate_bmi(height, weight),2)
     
     # Interpret BMI
     interpretation = interpret_bmi(bmi)
 
-    print("Your BMI is:",  round(bmi , 2))
+    print("Your BMI is:",  bmi )
     print("Interpretation:", interpretation)
 
 if __name__ == "__main__":
