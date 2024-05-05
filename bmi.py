@@ -1,23 +1,18 @@
-def calculate_bmi(height, weight):
+def calculate_and_interpret_bmi(height, weight):
     """
-    Calculate BMI (Body Mass Index) using weight in kilograms and height in meters.
-    Formula: BMI = weight / (height * height)
+    Calculate BMI (Body Mass Index) using weight in kilograms and height in meters,
+    and interpret the BMI value according to WHO guidelines.
     """
     bmi = weight / (height ** 2)
     
-    return bmi
-
-def interpret_bmi(bmi):
-    """
-    Interpret BMI value according to WHO guidelines.
-    """
     if bmi < 18.5:
-        return  -1
+        interpretation = -1
     elif bmi < 25:
-        return  0
-    elif bmi>  25:
-        return  1
+        interpretation = 0
+    else:
+        interpretation = 1
     
+    return bmi, interpretation
 
 def main():
     # Input weight in kilograms
@@ -25,13 +20,10 @@ def main():
     # Input height in meters
     height = float(input("Enter your height in meters: "))
 
-    # Calculate BMI
-    bmi = round(calculate_bmi(height, weight),2)
+    # Calculate BMI and interpret
+    bmi, interpretation = calculate_and_interpret_bmi(height, weight)
     
-    # Interpret BMI
-    interpretation = interpret_bmi(bmi)
-
-    print("Your BMI is:",  bmi )
+    print("Your BMI is:", round(bmi, 2))
     print("Interpretation:", interpretation)
 
 if __name__ == "__main__":
