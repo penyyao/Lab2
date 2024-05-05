@@ -12,7 +12,7 @@ def calculate_and_interpret_bmi(height, weight):
     else:
         interpretation = 1
     
-    return bmi, interpretation
+    return interpretation
 
 def main():
     # Input weight in kilograms
